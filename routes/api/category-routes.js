@@ -9,13 +9,7 @@ router.get("/", async (req, res) => {
     const categoryData = await Category.findAll({
       include: {
         model: Product,
-        attributes: [
-          "product_id",
-          "product_name",
-          "price",
-          "stock",
-          "category_id",
-        ],
+        attributes: ["id", "product_name", "price", "stock", "category_id"],
       },
     });
     res.status(200).json(categoryData);
@@ -31,13 +25,7 @@ router.get("/:id", async (req, res) => {
     const categoryData = await Category.findByPk(req.params.id, {
       include: {
         model: Product,
-        attributes: [
-          "product_id",
-          "product_name",
-          "price",
-          "stock",
-          "category_id",
-        ],
+        attributes: ["id", "product_name", "price", "stock", "category_id"],
       },
     });
     if (!categoryData) {
@@ -85,26 +73,20 @@ router.delete("/:id", async (req, res) => {
   try {
     const categoryData = await Category.destroy({
       where: {
-        category_id: req.params.id,
+        id: req.params.id,
       },
     });
     if (!categoryData[0]) {
       res.status(404) / json({ message: "no category with this id" });
       return;
     }
-    // const allData = await Category.findAll({
-    //   include: {
-    //     model: Product,
-    //     attributes: [
-    //       "product_id",
-    //       "product_name",
-    //       "price",
-    //       "stock",
-    //       "category_id",
-    //     ],
-    //   },
-    // });
-    res.status(200).json(categoryData);
+    const allData = await Category.findAll({
+      include: {
+        model: Product,
+        attributes: ["id", "product_name", "price", "stock", "category_id"],
+      },
+    });
+    res.status(200).json(allData);
   } catch (err) {
     res.status(500).json(err);
   }
