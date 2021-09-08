@@ -43,4 +43,8 @@ You may reach me by email at: <eaim928@gmail.com>
 
 You may also reach me on github: <https://github.com/gim928>
 
-Walkthrough video demonstrating table creation and seeding: https://drive.google.com/file/d/1pyyjnJ-LSBXaKBHbfyWpqZl0gDx7tQPM/view
+Walkthrough video demonstrating table creation and seeding: https://drive.google.com/file/d/1sH9vfcFIQiN-A8zFjGToN1vro_pEknJn/view
+Video demonstrating category routes via insomnia: https://drive.google.com/file/d/1A7T80IM00znn4Dyi-yi4_PuEbPAMHbo8/view
+Video demonstrating product routes via insomnia:
+
+Video demonstrating tag routes via insomnia:
