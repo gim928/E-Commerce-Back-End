@@ -44,7 +44,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const tagData = await tag.create({
-      name: req.body.name,
+      name: req.body.tag_name,
     });
     res.status(200).json(tagData);
   } catch (err) {
@@ -57,7 +57,7 @@ router.put("/:id", async (req, res) => {
   try {
     const tagData = await Tag.update(req.body, {
       where: {
-        tag_id: req.params.id,
+        id: req.params.id,
       },
     });
     if (!tagData[0]) {
@@ -75,7 +75,7 @@ router.delete("/:id", async (req, res) => {
   try {
     const tagData = await Tag.destroy({
       where: {
-        tag_id: req.params.id,
+        id: req.params.id,
       },
     });
     if (!tagData[0]) {
